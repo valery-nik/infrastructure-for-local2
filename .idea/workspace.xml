@@ -4,59 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec12c2a2-c768-465d-bb27-f98680e981da" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gatling/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gatling/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gatling/src/test/java/ru/tutorials/CustomerRequestSimulation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gatling/src/test/java/ru/tutorials/RestLoadTesting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gatling/src/test/java/ru/tutorials/RestLoadTesting_1k.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gatling/src/test/resources/gatling.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gatling/src/test/scala/Engine.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gatling/src/test/scala/IDEPathHelper.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gatling/src/test/scala/Recorder.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/java/ru/tutorials/TransactionsLocksAppApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/java/ru/tutorials/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/java/ru/tutorials/config/RedisLockProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/java/ru/tutorials/controller/SpeakerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/java/ru/tutorials/controller/TestPoolController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/java/ru/tutorials/dto/Likes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/java/ru/tutorials/entities/HistoryEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/java/ru/tutorials/entities/SpeakerEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/java/ru/tutorials/messaging/LikesConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/java/ru/tutorials/messaging/SpeakerMessageProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/java/ru/tutorials/messaging/StreamsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/java/ru/tutorials/repository/HistoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/java/ru/tutorials/repository/SpeakersRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/java/ru/tutorials/service/HistoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/java/ru/tutorials/service/SpeakerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/resources/data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/resources/jpoint/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/resources/jpoint/grafana/Docker metrics Dashboard.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/resources/jpoint/grafana/Kafka Lag Exporter Dashboard.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/resources/jpoint/grafana/storage/alerting/1/__default__.tmpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/resources/jpoint/grafana/storage/grafana.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/resources/jpoint/lag-exporter/application.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/resources/jpoint/lag-exporter/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/main/resources/jpoint/prometheus/prometheus.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/test/java/transactionslocksapp/AbstractIntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/test/java/transactionslocksapp/TransactionsLocksAppApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/test/resources/Gatling/user-files/simulations/computerdatabase/jpoint/KafkaLoadTesting.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/test/resources/Gatling/user-files/simulations/computerdatabase/jpoint/KafkaLoadTesting_1k.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/test/resources/Gatling/user-files/simulations/computerdatabase/jpoint/RestLoadTesting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locks-app/src/test/resources/Gatling/user-files/simulations/computerdatabase/jpoint/RestLoadTesting_1k.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postgres/init-db.sql" afterDir="false" />
+    <list default="true" id="ec12c2a2-c768-465d-bb27-f98680e981da" name="Changes" comment="feat: init commit">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/remote-targets.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,9 +70,12 @@
       <recent name="D:\Igor\work\MyTransactionLocksApp\postgres" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml.kafka-lag-exporter: Compose Deployment">
+  <component name="RunManager" selected="Docker.docker-compose.yml.cache: Compose Deployment">
     <configuration name="TransactionsLocksAppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" />
       <module name="locks-app" />
+      <projectPathOnTarget name="projectPathOnTarget" value="/app" />
+      <target name="@@@LOCAL@@@" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ru.tutorials.TransactionsLocksAppApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -147,12 +102,12 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.grafana: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-compose.yml.cache: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="grafana" />
+              <option value="cache" />
             </list>
           </option>
           <option name="sourceFilePath" value="docker-compose.yml" />
@@ -163,6 +118,7 @@
     <configuration name="docker-compose.yml.kafka-lag-exporter: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
+          <option name="envFilePath" value="" />
           <option name="services">
             <list>
               <option value="kafka-lag-exporter" />
@@ -173,12 +129,12 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.prometheus: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-compose.yml.postgres: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="prometheus" />
+              <option value="postgres" />
             </list>
           </option>
           <option name="sourceFilePath" value="docker-compose.yml" />
@@ -186,13 +142,21 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Docker.docker-compose.yml.cache: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.postgres: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.broker: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.kafka-lag-exporter: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="Spring Boot.TransactionsLocksAppApplication" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yml.cache: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.postgres: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.kafka-lag-exporter: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.broker: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.grafana: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.prometheus: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -204,8 +168,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665929757496</updated>
-      <workItem from="1665929758782" duration="13370000" />
+      <workItem from="1665929758782" duration="17671000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: init commit">
+      <created>1666379750833</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666379750833</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,5 +188,9 @@
     <option featureType="dependencySupport" implementationName="java:jakarta.persistence:jakarta.persistence-api" />
     <option featureType="dependencySupport" implementationName="java:org.apache.kafka:kafka-clients" />
     <option featureType="dependencySupport" implementationName="java:org.hibernate:hibernate-core" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: init commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: init commit" />
   </component>
 </project>

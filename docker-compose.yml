@@ -55,6 +55,18 @@ services:
       CONFLUENT_METRICS_ENABLE: 'true'
       CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
 
+  cache:
+    image: redis:6.2-alpine
+    restart: always
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    networks:
+      - jpoint_network
+#    volumes:
+#      - cache:/data
+#      -
+
   # schema-registry:
   #   image: confluentinc/cp-schema-registry:7.1.1
   #   networks:
@@ -228,7 +240,7 @@ services:
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
     ports:
-    - 8001:8080
+      - 8001:8080
 
   prometheus:
     image: docker.io/prom/prometheus:latest
@@ -237,9 +249,9 @@ services:
     hostname: prometheus
     container_name: prometheus
     ports:
-     - "9090:9090"
+      - "9090:9090"
     volumes:
-     - C:\Docker\jpoint\prometheus\prometheus.yml:/etc/prometheus/prometheus.yml
+      - C:\Docker\jpoint\prometheus\prometheus.yml:/etc/prometheus/prometheus.yml
 
   grafana:
     image: docker.io/grafana/grafana:latest
@@ -254,8 +266,8 @@ services:
 
   postgres:
     image: 'postgres:12.10'
-    networks:
-      - jpoint_network
+    #    networks:
+    #      - jpoint_network
     hostname: postgres
     container_name: postgres-1
     ports:

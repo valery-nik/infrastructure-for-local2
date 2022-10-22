@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteTargetsManager">
+    <option name="projectDefaultTargetUuid" value="a08e88cf-8b08-48f8-b3cf-5e8229c137d0" />
+    <targets>
+      <target name="openjdk:18-alpine" type="docker" uuid="a08e88cf-8b08-48f8-b3cf-5e8229c137d0">
+        <config>
+          <option name="targetPlatform">
+            <TargetPlatform />
+          </option>
+          <option name="buildImageConfig">
+            <BuildImageConfig>
+              <option name="dockerFile" value="Dockerfile" />
+            </BuildImageConfig>
+          </option>
+          <option name="buildNotPull" value="false" />
+          <option name="containerConfig">
+            <ContainerConfig>
+              <option name="runCliOptions" value="" />
+            </ContainerConfig>
+          </option>
+          <option name="pullImageConfig">
+            <PullImageConfig>
+              <option name="tagToPull" value="openjdk:18-alpine" />
+            </PullImageConfig>
+          </option>
+        </config>
+        <ContributedStateBase type="JavaLanguageRuntime">
+          <config>
+            <option name="agentFolder">
+              <VolumeState>
+                <option name="targetSpecificBits">
+                  <map>
+                    <entry key="mountAsVolume" value="false" />
+                  </map>
+                </option>
+              </VolumeState>
+            </option>
+            <option name="classpathFolder">
+              <VolumeState>
+                <option name="targetSpecificBits">
+                  <map>
+                    <entry key="mountAsVolume" value="false" />
+                  </map>
+                </option>
+              </VolumeState>
+            </option>
+            <option name="homePath" value="/opt/openjdk-18" />
+            <option name="javaVersionString" value="18-ea" />
+          </config>
+        </ContributedStateBase>
+        <ContributedStateBase type="JavaLanguageRuntime">
+          <config>
+            <option name="agentFolder">
+              <VolumeState>
+                <option name="targetSpecificBits">
+                  <map>
+                    <entry key="mountAsVolume" value="false" />
+                  </map>
+                </option>
+              </VolumeState>
+            </option>
+            <option name="classpathFolder">
+              <VolumeState>
+                <option name="targetSpecificBits">
+                  <map>
+                    <entry key="mountAsVolume" value="false" />
+                  </map>
+                </option>
+              </VolumeState>
+            </option>
+          </config>
+        </ContributedStateBase>
+      </target>
+      <target name="openjdk:18-alpine2" type="docker" uuid="d1bd0de7-407f-43d2-81ea-6780fd57e2fc">
+        <config>
+          <option name="targetPlatform">
+            <TargetPlatform />
+          </option>
+          <option name="buildImageConfig">
+            <BuildImageConfig>
+              <option name="dockerFile" value="Dockerfile" />
+            </BuildImageConfig>
+          </option>
+          <option name="buildNotPull" value="false" />
+          <option name="containerConfig">
+            <ContainerConfig>
+              <option name="runCliOptions" value="" />
+            </ContainerConfig>
+          </option>
+          <option name="pullImageConfig">
+            <PullImageConfig>
+              <option name="tagToPull" value="openjdk:18-alpine" />
+            </PullImageConfig>
+          </option>
+        </config>
+        <ContributedStateBase type="JavaLanguageRuntime">
+          <config>
+            <option name="agentFolder">
+              <VolumeState>
+                <option name="targetSpecificBits">
+                  <map>
+                    <entry key="mountAsVolume" value="false" />
+                  </map>
+                </option>
+              </VolumeState>
+            </option>
+            <option name="classpathFolder">
+              <VolumeState>
+                <option name="targetSpecificBits">
+                  <map>
+                    <entry key="mountAsVolume" value="false" />
+                  </map>
+                </option>
+              </VolumeState>
+            </option>
+            <option name="homePath" value="/opt/openjdk-18" />
+            <option name="javaVersionString" value="18-ea" />
+          </config>
+        </ContributedStateBase>
+      </target>
+    </targets>
+  </component>
+</project>
