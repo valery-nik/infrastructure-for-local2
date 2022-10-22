@@ -21,6 +21,14 @@
 
         <spring-boot.version>2.7.4</spring-boot.version>
         <spring-cloud.version>2021.0.4</spring-cloud.version>
+
+        <maven-enforcer-plugin.version>3.1.0</maven-enforcer-plugin.version>
+        <jetbrains-kotlin.version>1.7.20-Beta</jetbrains-kotlin.version>
+        <slf4j.version>2.0.0-alpha1</slf4j.version>
+        <scala.version>2.13.6</scala.version>
+
+        <testcontainers-bom.version>1.17.5</testcontainers-bom.version>
+        <kafka.version>3.1.2</kafka.version>
     </properties>
 
     <dependencyManagement>
@@ -39,6 +47,65 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>testcontainers-bom</artifactId>
+                <version>${testcontainers-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--   setting versions for fix enforcer rules  -->
+            <dependency>
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-library</artifactId>
+                <version>2.13.8</version>
+            </dependency>
+            <dependency>
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-reflect</artifactId>
+                <version>${scala.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-clients</artifactId>
+                <version>${kafka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-streams-test-utils</artifactId>
+                <version>${kafka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka_2.13</artifactId>
+                <version>${kafka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib-jdk8</artifactId>
+                <version>${jetbrains-kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib-jdk7</artifactId>
+                <version>${jetbrains-kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib</artifactId>
+                <version>${jetbrains-kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib-common</artifactId>
+                <version>${jetbrains-kotlin.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -49,6 +116,54 @@
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <version>${spring-boot.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>${maven-enforcer-plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>extra-enforcer-rules</artifactId>
+                            <version>1.6.1</version>
+                        </dependency>
+                    </dependencies>
+                    <executions>
+                        <execution>
+                            <id>enforce</id>
+                            <goals>
+                                <goal>enforce</goal>
+                            </goals>
+                            <configuration>
+                                <rules>
+                                    <requireMavenVersion>
+                                        <version>[3.8.1,)</version>
+                                        <message>3.8.1 required to no longer download dependencies via HTTP (use HTTPS instead).</message>
+                                    </requireMavenVersion>
+                                    <requireJavaVersion>
+                                        <version>[17,)</version>
+                                    </requireJavaVersion>
+                                    <requireReleaseDeps>
+                                        <message>No Snapshots Allowed!</message>
+                                        <excludes>
+                                            <exclude>oz.tutorials:*</exclude>
+                                        </excludes>
+                                    </requireReleaseDeps>
+<!--                                    <requirePluginVersions>-->
+<!--                                        <message>Best Practice is to always define plugin versions!</message>-->
+<!--                                        <banLatest>false</banLatest>-->
+<!--                                        <banRelease>false</banRelease>-->
+<!--                                        <banSnapshots>true</banSnapshots>-->
+<!--                                    </requirePluginVersions>-->
+
+                                    <dependencyConvergence/>
+                                    <requireUpperBoundDeps/>
+                                    <banCircularDependencies/>
+                                    <banDuplicatePomDependencyVersions/>
+                                </rules>
+                            </configuration>
+                        </execution>
+                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>
