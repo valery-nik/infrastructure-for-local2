@@ -1,5 +1,10 @@
 package transactionslocksapp;
 
-class TransactionsLocksAppApplicationTests extends AbstractIntegrationTest {
+import org.junit.jupiter.api.Test;
 
+class TransactionsLocksAppApplicationTests extends AbstractIntegrationTest {
+    @Test
+    public void contextLoadTest() {
+
+    }
 }

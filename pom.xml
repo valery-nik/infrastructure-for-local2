@@ -23,6 +23,9 @@
         <spring-cloud.version>2021.0.4</spring-cloud.version>
 
         <maven-enforcer-plugin.version>3.1.0</maven-enforcer-plugin.version>
+        <maven-failsafe-plugin.version>3.0.0-M7</maven-failsafe-plugin.version>
+        <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
+
         <jetbrains-kotlin.version>1.7.20-Beta</jetbrains-kotlin.version>
         <slf4j.version>2.0.0-alpha1</slf4j.version>
         <scala.version>2.13.6</scala.version>
@@ -53,6 +56,32 @@
                 <version>${testcontainers-bom.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <scope>test</scope>
+                <version>${spring-boot.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.junit.vintage</groupId>
+                        <artifactId>junit-vintage-engine</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>testcontainers</artifactId>
+                <version>${testcontainers-bom.version}</version>
+                <scope>test</scope>
+<!--                <exclusions>-->
+<!--                    <exclusion>-->
+<!--                        <artifactId>junit</artifactId>-->
+<!--                        <groupId>junit</groupId>-->
+<!--                    </exclusion>-->
+<!--                </exclusions>-->
             </dependency>
 
             <!--   setting versions for fix enforcer rules  -->
@@ -109,6 +138,24 @@
         </dependencies>
     </dependencyManagement>
 
+    <dependencies>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.30</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.6</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <pluginManagement>
             <plugins>
@@ -138,7 +185,9 @@
                                 <rules>
                                     <requireMavenVersion>
                                         <version>[3.8.1,)</version>
-                                        <message>3.8.1 required to no longer download dependencies via HTTP (use HTTPS instead).</message>
+                                        <message>3.8.1 required to no longer download dependencies via HTTP (use HTTPS
+                                            instead).
+                                        </message>
                                     </requireMavenVersion>
                                     <requireJavaVersion>
                                         <version>[17,)</version>
@@ -149,12 +198,12 @@
                                             <exclude>oz.tutorials:*</exclude>
                                         </excludes>
                                     </requireReleaseDeps>
-<!--                                    <requirePluginVersions>-->
-<!--                                        <message>Best Practice is to always define plugin versions!</message>-->
-<!--                                        <banLatest>false</banLatest>-->
-<!--                                        <banRelease>false</banRelease>-->
-<!--                                        <banSnapshots>true</banSnapshots>-->
-<!--                                    </requirePluginVersions>-->
+                                    <!--                                    <requirePluginVersions>-->
+                                    <!--                                        <message>Best Practice is to always define plugin versions!</message>-->
+                                    <!--                                        <banLatest>false</banLatest>-->
+                                    <!--                                        <banRelease>false</banRelease>-->
+                                    <!--                                        <banSnapshots>true</banSnapshots>-->
+                                    <!--                                    </requirePluginVersions>-->
 
                                     <dependencyConvergence/>
                                     <requireUpperBoundDeps/>
@@ -164,6 +213,39 @@
                             </configuration>
                         </execution>
                     </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-plugin.version}</version>
+                    <configuration>
+                        <includes>
+                            <include>**/Test*.class</include>
+                            <include>**/*Test.class</include>
+                            <include>**/*Tests.class</include>
+                            <include>**/*TestCase.class</include>
+                        </includes>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>${maven-failsafe-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>integration-test</goal>
+                                <goal>verify</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <includes>
+                            <include>**/IT*.class</include>
+                            <include>**/*IT.class</include>
+                            <include>**/*ITCase.class</include>
+                        </includes>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>

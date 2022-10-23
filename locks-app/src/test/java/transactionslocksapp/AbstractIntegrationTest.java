@@ -27,8 +27,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public abstract class AbstractIntegrationTest {
 
     @Container
-    private static PostgreSQLContainer<?> POSTGRESQL_CONTAINER = new PostgreSQLContainer<>("postgres:12.10")
+    private static PostgreSQLContainer<?> POSTGRESQL_CONTAINER = new PostgreSQLContainer<>("postgres")
             .withDatabaseName("database")
+//            .withInitScript("postgres/init.sql")
             .withUsername("postgres")
             .withPassword("password");
 
